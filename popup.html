@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>StudioBand AdBlocker</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="popup-container">
+    <!-- Header -->
+    <header class="header">
+      <div class="brand">
+        <div class="logo-icon">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+            <path d="M12 2L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-3zm-2 16l-4-4 1.41-1.41L10 15.17l6.59-6.59L18 10l-8 8z"/>
+          </svg>
+        </div>
+        <div class="brand-text">
+          <h1>StudioBand</h1>
+          <span class="subtitle">Anime AdShield</span>
+        </div>
+      </div>
+      <div class="version-tag">v1.0</div>
+    </header>
+
+    <!-- Main Switch -->
+    <div class="status-card" id="statusCard">
+      <div class="status-info">
+        <div class="status-dot" id="statusDot"></div>
+        <div>
+          <div class="status-title" id="statusTitle">Защита активна</div>
+          <div class="status-desc" id="statusDesc">Реклама в сериях заблокирована</div>
+        </div>
+      </div>
+      <label class="switch">
+        <input type="checkbox" id="toggleSwitch" checked>
+        <span class="slider"></span>
+      </label>
+    </div>
+
+    <!-- Stats Grid -->
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-icon video-icon">🎬</div>
+        <div class="stat-data">
+          <div class="stat-value" id="statVideoAds">0</div>
+          <div class="stat-label">Видео-вставок (VAST/мидроллы)</div>
+        </div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-icon banner-icon">🚫</div>
+        <div class="stat-data">
+          <div class="stat-value" id="statBanners">0</div>
+          <div class="stat-label">Баннеров и поп-апов</div>
+        </div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-icon tracker-icon">🛡️</div>
+        <div class="stat-data">
+          <div class="stat-value" id="statTrackers">0</div>
+          <div class="stat-label">Трекеров рекламы</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Target Site Info -->
+    <div class="supported-box">
+      <span class="pulse-icon"></span>
+      <span>Работает на <b>studiobandme.ru</b> и <b>Kodik</b></span>
+    </div>
+
+    <!-- Action Buttons -->
+    <div class="actions">
+      <button class="btn secondary-btn" id="btnReload" title="Перезагрузить текущую вкладку">
+        <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor">
+          <path d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z"/>
+        </svg>
+        Обновить страницу
+      </button>
+      <button class="btn danger-btn" id="btnReset" title="Сбросить счетчики заблокированного">
+        Сброс
+      </button>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

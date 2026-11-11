@@ -1,0 +1,64 @@
+{
+  "manifest_version": 2,
+  "name": "StudioBand Anime AdBlocker",
+  "version": "1.0.0",
+  "description": "Блокировка рекламных вставок (прероллы, мидроллы во время серии, баннеры, VAST) на StudioBand и в плеере Kodik.",
+  "author": "Antigravity",
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "studioband-anime-adblocker@local",
+      "strict_min_version": "109.0"
+    }
+  },
+  "icons": {
+    "16": "icons/icon-16.png",
+    "48": "icons/icon-48.png",
+    "96": "icons/icon-96.png",
+    "128": "icons/icon-128.png"
+  },
+  "permissions": [
+    "webRequest",
+    "webRequestBlocking",
+    "storage",
+    "<all_urls>"
+  ],
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": true
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.studiobandme.ru/*",
+        "*://kodikplayer.com/*",
+        "*://*.kodikplayer.com/*",
+        "*://kodik.info/*",
+        "*://*.kodik.info/*",
+        "*://kodik.biz/*",
+        "*://*.kodik.biz/*",
+        "*://kodik.cc/*",
+        "*://*.kodik.cc/*",
+        "*://kodik.online/*",
+        "*://*.kodik.online/*",
+        "*://player.cdnvideohub.com/*"
+      ],
+      "js": ["content.js"],
+      "css": ["blocker.css"],
+      "run_at": "document_start",
+      "all_frames": true
+    }
+  ],
+  "web_accessible_resources": [
+    "inject.js",
+    "icons/*"
+  ],
+  "browser_action": {
+    "default_icon": {
+      "16": "icons/icon-16.png",
+      "48": "icons/icon-48.png",
+      "96": "icons/icon-96.png"
+    },
+    "default_title": "StudioBand Anime AdBlocker",
+    "default_popup": "popup.html"
+  }
+}

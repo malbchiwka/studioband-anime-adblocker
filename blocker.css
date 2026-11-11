@@ -1,0 +1,47 @@
+/* StudioBand Anime AdBlocker - Stylesheet */
+
+/* Remove Yandex RTB ad containers around page and player */
+div[id^="yandex_rtb_"],
+div[class*="yandex_rtb"],
+.ya-partner,
+.ya-chat-widget,
+.page__player + div[id^="yandex_rtb_"] {
+  display: none !important;
+  visibility: hidden !important;
+  height: 0 !important;
+  width: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  pointer-events: none !important;
+}
+
+/* Remove Kodik VPAID and advertising overlays */
+#vpaid_iframe,
+.kodik-adv,
+.advert_box,
+.promo-ad,
+.promo-error {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+/* Block rogue ad iframes */
+iframe[src*="adfox"],
+iframe[src*="buzzoola"],
+iframe[src*="yandex.ru/ads"],
+iframe[src*="vak345"],
+iframe[src*="trafficbass"] {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  pointer-events: none !important;
+}
+
+/* Ensure player wrapper takes full width without blank ad gaps */
+.page__player {
+  margin-top: 15px !important;
+  margin-bottom: 25px !important;
+}
